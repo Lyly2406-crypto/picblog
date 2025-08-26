@@ -86,17 +86,22 @@ DATABASES = {
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
+     {
+
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+
+        'OPTIONS': {
+
+            'min_length': 8,
+
+        }
+
     },
+
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+
+        'NAME': 'authentication.validators.ContainsLetterValidator',
+
     },
 ]
 
@@ -126,3 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'authentication.User'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'LOGIN_URL'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media/'

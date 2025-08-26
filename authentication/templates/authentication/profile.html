@@ -1,0 +1,10 @@
+
+{% load static %}
+
+{% if user.userprofile.profile_photo %}
+    <img src="{{ user.userprofile.profile_photo.url }}" alt="Profile Photo" width="150">
+{% else %}
+    <img src="{% static 'images/default_profile.png' %}" alt="Default Profile" width="150">
+{% endif %}
+
+<p><a href="{% url 'upload_profile_photo' %}">Change Profile Photo</a></p>
