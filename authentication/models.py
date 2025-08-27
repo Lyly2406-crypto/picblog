@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.settings.AUTH_USER_MODEL.username
 
-# Crée automatiquement le profil quand un utilisateur est créé
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
@@ -21,6 +21,12 @@ def create_user_profile(sender, instance, created, **kwargs):
 class User(AbstractUser):
     CREATOR = 'CREATOR'
     SUBSCRIBER = 'SUBSCRIBER'
+
+    follows = models.ManyToManyField(
+        'self',
+        limit_choices_to={'role': CREATOR},
+        symmetrical=False,
+        verbose_name='suit',)
 
     ROLE_CHOICES = [
         (CREATOR, 'Createur'),

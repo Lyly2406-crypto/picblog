@@ -1,0 +1,108 @@
+
+/* Style général */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1f2d27; /* Vert foncé */
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.sidebar h1 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.sidebar p {
+    margin: 10px 0;
+}
+
+.sidebar img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+/* Bannière profil type Facebook */
+.sidebar #profile-banner {
+    width: 100%;           /* occupe toute la largeur de la sidebar */
+    height: 150px;         /* hauteur de la bannière (tu peux ajuster) */
+    object-fit: cover;     /* recadre sans déformer */
+    border-radius: 8px;    /* coins arrondis (facultatif, mets 0 si tu veux un rectangle net) */
+    margin-bottom: 15px;   /* espace après la bannière */
+}
+
+
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Contenu principal */
+.main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.main-content h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="file"],
+form textarea {
+    width: 300px;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #1f2d27;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #324c3c;
+}
